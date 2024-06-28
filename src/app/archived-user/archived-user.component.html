@@ -1,0 +1,291 @@
+<body class="pace-done " data-select2-id="select2-data-74-krc1"><div class="pace pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+    <div class="pace-progress-inner"></div>
+  </div>
+  <div class="pace-activity"></div></div>
+<app-dash-header></app-dash-header>
+<main class="nxl-container">
+    <div class="nxl-content">
+        <!-- [ page-header ] start -->
+        <div class="page-header">
+            <div class="page-header-left d-flex align-items-center">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">Users</h5>
+                </div>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item">Users</li>
+                </ul>
+            </div>
+            <div class="page-header-right ms-auto">
+                <div class="page-header-right-items">
+                    <div class="d-flex d-md-none">
+                        <a href="javascript:void(0)" class="page-header-right-close-toggle">
+                            <i class="feather-arrow-left me-2"></i>
+                            <span>Back</span>
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
+                        <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true">
+                            <i class="feather-bar-chart"></i>
+                        </a>
+                      </div>
+                </div>
+                <div class="d-md-none d-flex align-items-center">
+                    <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                        <i class="feather-align-right fs-20"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="collapseOne" class="accordion-collapse page-header-collapse collapse show" >
+            <div class="accordion-body pb-2">
+                <div class="row">
+                    <div style="box-shadow: 20%;" class="col-xxl-12 col-md-6">
+                        <div class="card stretch stretch-full">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="avatar-text avatar-xl rounded">
+                                            <i class="feather-users"></i>
+                                        </div>
+                                        <a href="javascript:void(0);" class="fw-bold d-block">
+                                            <span class="d-block">ALL Archived Users</span>
+                                            <span class="fs-24 fw-bolder d-block"> {{ALLUser}}</span>
+                                        </a>
+                                    </div>
+                                    <div class="badge bg-soft-success text-success">
+                                        <i class="feather-arrow-up fs-10 me-1"></i>
+                                        <span>36.85%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                  
+                  
+                </div>
+            </div>
+        </div>
+        <!-- [ page-header ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="main-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card stretch stretch-full">
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <div id="leadList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer"><div class="row"><div class="col-sm-6"><div id="leadList_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="leadList"></label></div></div></div><div class="row dt-row"><div class="col-sm-12"><table class="table table-hover dataTable no-footer" id="leadList" aria-describedby="leadList_info">
+                                    <thead>
+                                        <tr>
+                                            <th class="wd-30 sorting sorting_asc" tabindex="0" aria-controls="leadList" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+                                                
+                                                    
+                                                        
+                                                        
+                                                    
+                                                
+                                            : activate to sort column descending" style="width: 30px;">
+                                                <div class="btn-group mb-1">
+                                                    <div class="custom-control custom-checkbox ms-1">
+                                                        <input type="checkbox" class="custom-control-input" id="checkAllLead">
+                                                    </div>
+                                                </div> cin
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="leadList" rowspan="1" colspan="1" aria-label="Lead: activate to sort column ascending" style="width: 138.375px;">Full Name</th>
+                                            <th class="sorting" tabindex="0" aria-controls="leadList" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="width: 168.725px;">Email</th>
+                                            <th class="sorting" tabindex="0" aria-controls="leadList" rowspan="1" colspan="1" aria-label="Source: activate to sort column ascending" style="width: 82.45px;">Status</th>
+                                            <th class="sorting" tabindex="0" aria-controls="leadList" rowspan="1" colspan="1" aria-label="Phone: activate to sort column ascending" style="width: 92.625px;">Phone</th>
+                                            <th class="sorting" tabindex="0" aria-controls="leadList" rowspan="1" colspan="1" aria-label="Date: activate to sort column ascending" style="width: 133.512px;">Register Date</th>
+                                            <th class="sorting" tabindex="0" aria-controls="leadList" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 128.913px;">Role</th>
+                                            <th class="text-end sorting" tabindex="0" aria-controls="leadList" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 68px;">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    <tr *ngFor="let user of paginatedUsers" class="single-item odd">
+                                            <td class="sorting_1">
+                                                <div class="item-checkbox ms-1">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <span class="select2 select2-container select2-container--bootstrap-5" dir="ltr" data-select2-id="select2-data-2-qa8m" style="width: 105.838px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-9yl6-container" aria-controls="select2-9yl6-container"><span class="select2-selection__rendered" id="select2-9yl6-container" role="textbox" aria-readonly="true" title="Contacted"><span class="hstack gap-2"> <span class="wd-7 ht-7 rounded-circle bg-indigo"></span>  {{user.cin}}</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+
+                                                    </div>
+                                               
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a class="hstack gap-3">
+                                                   
+                                                    <div>
+                                                        <span class="text-truncate-1-line">{{user.userFirstName}} {{user.userLastName}}</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td><a>{{user.email}}</a></td>
+                                            <td>
+                                                <div class="hstack gap-2">
+                                                    
+                                                    <a href="javascript:void(0);">{{user.staus}}</a>
+                                                </div>
+                                            </td>
+                                            <td><a>{{user.phoneNumber}}</a></td>
+                                            <td><a href="javascript:void(0);">{{user.createdDate}}</a></td>
+                                            <td> <a  href="javascript:void(0);">{{user.role[0].roleName}}</a></td>
+                                            <td>
+                                                <div class="hstack gap-2 justify-content-end">
+                                                    <a  (click)="openModal(user, modalContent)" class="avatar-text avatar-md">
+                                                        <i class="feather feather-eye"></i>
+                                                    </a>
+                                                   
+                                                </div>
+                                            </td>
+                                        </tr></tbody>
+                                </table></div></div>
+                                                  </div> </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="pagination list-unstyled d-flex align-items-center gap-2 mb-0 pagination-common-style">
+                    <li [class.disabled]="currentPage === 1">
+                      <a href="javascript:void(0);" (click)="setPage(currentPage - 1)">
+                        <i class="bi bi-arrow-left"></i>
+                      </a>
+                    </li>
+                    <li *ngFor="let page of [].constructor(totalPages); let i = index">
+                      <a href="javascript:void(0);" (click)="setPage(i + 1)" [class.active]="currentPage === i + 1">{{ i + 1 }}</a>
+                    </li>
+                    <li [class.disabled]="currentPage === totalPages">
+                      <a href="javascript:void(0);" (click)="setPage(currentPage + 1)">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </li>
+                  </ul>   
+            </div>
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
+    <!-- [ Footer ] start -->
+    <footer class="footer">
+        <p class="fs-11 text-muted fw-medium text-uppercase mb-0 copyright">
+            <span>Copyright ©</span>
+            <script>
+                document.write(new Date().getFullYear());
+            </script>2024
+        </p>
+        <div class="d-flex align-items-center gap-4">
+            <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Help</a>
+            <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Terms</a>
+            <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Privacy</a>
+        </div>
+    </footer>
+    <!-- [ Footer ] end -->
+</main>
+<ng-template #modalContent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" style=" font-family: Georgia, 'Times New Roman', Times, serif;">Profile</h4>
+      <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <!-- Display only the product image here -->
+      <div class="col-xxl-12 col-xl-12">
+        <div class="card stretch stretch-full">
+            <div class="card-body">
+                <div class="mb-4 text-center">
+                    <div class="wd-150 ht-150 mx-auto mb-3 position-relative">
+                        <div class="avatar-image wd-150 ht-150 border border-5 border-gray-3">
+                            <img src="assets/ok/images/auth/profile.jpg" alt="" class="img-fluid">
+                        </div>
+                        <div class="wd-10 ht-10 text-success rounded-circle position-absolute translate-middle" style="top: 76%; right: 10px">
+                            <i class="bi bi-patch-check-fill"></i>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <a href="javascript:void(0);" class="fs-14 fw-bold d-block"> {{selectedUser.userFirstName }} {{ selectedUser.userLastName}}</a>
+                        <a href="javascript:void(0);" class="fs-12 fw-normal text-muted d-block">{{selectedUser.email }}</a>
+                    </div>
+                    <div class="fs-12 fw-normal text-muted text-center d-flex flex-wrap gap-3 mb-4">
+                        <div class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
+                            <h6 class="fs-15 fw-bolder">28.65K</h6>
+                            <p class="fs-12 text-muted mb-0">Followers</p>
+                        </div>
+                        <div class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
+                            <h6 class="fs-15 fw-bolder">38.85K</h6>
+                            <p class="fs-12 text-muted mb-0">Following</p>
+                        </div>
+                        <div class="flex-fill py-3 px-4 rounded-1 d-none d-sm-block border border-dashed border-gray-5">
+                            <h6 class="fs-15 fw-bolder">43.67K</h6>
+                            <p class="fs-12 text-muted mb-0">Engagement</p>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list-unstyled mb-4">
+                    <li class="hstack justify-content-between mb-4">
+                        <span class="text-muted fw-medium hstack gap-3"><i class="feather-map-pin"></i>Full Adress</span>
+                        <a href="javascript:void(0);" class="float-end">{{selectedUser.codePostal }} ,{{selectedUser.address }}, {{selectedUser.pays }}</a>
+                    </li>
+                    <li class="hstack justify-content-between mb-4">
+                        <span class="text-muted fw-medium hstack gap-3"><i class="feather-phone"></i>Phone</span>
+                        <a href="javascript:void(0);" class="float-end">{{selectedUser.phoneNumber }}</a>
+                    </li>
+                    <li class="hstack justify-content-between mb-0">
+                        <span class="text-muted fw-medium hstack gap-3"><i class="feather-mail"></i>Email</span>
+                        <a href="javascript:void(0);" class="float-end">{{selectedUser.email }}</a>
+                    </li>
+                </ul>
+                <div  style="color: red;" class="d-flex gap-2 text-center pt-4">
+                    <a (click)="SuprimerUser(selectedUser.id)" href="javascript:void(0);" class="w-50 btn btn-light-brand">
+                        <i  style="color: red;" class="feather-trash-2 me-2"></i>
+                        <span  style="color: red;" >Delete</span>
+                    </a>
+                    <a (click)="ArchiverUser(selectedUser.id)" href="javascript:void(0);" class="w-50 btn btn-primary">
+                        <i class="feather-edit me-2"></i>
+                        <span>Archive</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+      
+        <div class="card stretch stretch-full">
+            <div class="card-header">
+                <h2 class="card-title">All Transactions</h2>
+
+            </div>
+            <div  *ngFor="let trans of Orders" class="card-body">
+                <div class="d-flex align-items-center mb-4">
+                    <div class="avatar-image flex-shrink-0 me-3">
+                        <img src="assets/ok/images/pay.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="flex-grow-1">
+                        <div>
+                            <h5 class="fs-13 mb-1">{{trans.purchaseDate}}</h5>
+                            <p class="fs-12 text-muted mb-0">Product Name :  {{trans.productName}}</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 ms-2">
+                        <a href="javascript:void(0);" > CardNumber : {{trans.card}}</a>
+                        <p class="fs-12 text-muted mb-0"> {{trans.dateCard}}</p>
+
+                    </div>
+                </div>
+                
+
+            </div>
+            <a href="javascript:void(0);" class="ladda-button zoom-out" data-bs-toggle="tooltip" data-bs-trigger="hover" title="" data-bs-original-title="Refresh Now">
+                <span> Number Of Transactions : {{ Orderlength}}</span>
+                <span class="spinner"></span>
+            </a>
+        </div>
+    </div>    </div>
+
+  </ng-template>

@@ -1,0 +1,98 @@
+.product-row td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Indicate that the image is clickable */
+}
+
+.hstack {
+    display: flex;
+    align-items: center;
+}
+
+.gap-3 {
+    gap: 1rem; /* Adjust the gap as needed */
+}
+
+.avatar-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-md {
+    width: 2.5rem; /* Adjust size as needed */
+    height: 2.5rem; /* Adjust size as needed */
+}
+
+img.img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.description-textarea {
+    width: 100%;
+    height: auto;
+    resize: none;
+    border: none;
+    background: transparent;
+    text-align: center;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+   
+}
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+  }
+  
+  #meme-form {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+
+  
+   
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+#meme-form label {
+    color: #0e0e2c; /* Dark blue labels */
+}
+#meme-form input, .meme-form select {
+    font-size: 14px; 
+    border-radius: 5px;
+    border: 1px solid #000; 
+    width: 100%; 
+    margin-bottom: 10px; 
+}
+#meme-form button {
+    background: #ff69b4; /* Hot pink button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#meme-form button:hover {
+    background: #ff1493; /* Deep pink on hover */
+}
+#text-danger {
+    font-size: 12px; /* Smaller error message size */
+}

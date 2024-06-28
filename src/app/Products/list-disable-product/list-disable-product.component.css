@@ -1,0 +1,66 @@
+.product-row td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Indicate that the image is clickable */
+}
+
+.hstack {
+    display: flex;
+    align-items: center;
+}
+
+.gap-3 {
+    gap: 1rem; /* Adjust the gap as needed */
+}
+
+.avatar-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-md {
+    width: 2.5rem; /* Adjust size as needed */
+    height: 2.5rem; /* Adjust size as needed */
+}
+
+img.img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.description-textarea {
+    width: 100%;
+    height: auto;
+    resize: none;
+    border: none;
+    background: transparent;
+    text-align: center;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+   
+}
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+  }
+  

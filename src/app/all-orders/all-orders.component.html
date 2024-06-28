@@ -1,0 +1,206 @@
+<body class="pace-done " data-select2-id="select2-data-74-krc1"><div class="pace pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+    <div class="pace-progress-inner"></div>
+  </div>
+  <div class="pace-activity"></div></div>
+<app-dash-header></app-dash-header>
+
+
+
+<main class="nxl-container">
+    <div class="nxl-content">
+        <!-- [ page-header ] start -->
+        <div class="page-header">
+            <div class="page-header-left d-flex align-items-center">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">Orders</h5>
+                </div>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item">Orders</li>
+                </ul>
+            </div>
+            <div class="page-header-right ms-auto">
+                <div class="page-header-right-items">
+                    <div class="d-flex d-md-none">
+                        <a href="javascript:void(0)" class="page-header-right-close-toggle">
+                            <i class="feather-arrow-left me-2"></i>
+                            <span>Back</span>
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
+                        <a href="javascript:void(0);" class="btn btn-icon btn-light-brand" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            <i class="feather-bar-chart"></i>
+                        </a>
+     
+                        
+                    </div>
+                </div>
+                <div class="d-md-none d-flex align-items-center">
+                    <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                        <i class="feather-align-right fs-20"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="collapseOne" class="accordion-collapse collapse page-header-collapse">
+            <div class="accordion-body pb-2">
+                <div class="row">
+                    <div class="col-xxl-4 col-md-6">
+                        <div class="card stretch stretch-full">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <a href="javascript:void(0);" class="fw-bold d-block">
+                                        <span class="d-block">Total Orders</span>
+                                        <span class="fs-20 fw-bold d-block">{{totalCount}}</span>
+
+                                    </a>
+                                    <div class="badge bg-soft-success text-success">
+                                        <i class="feather-arrow-up fs-10 me-1"></i>
+                                        <span>36.85%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-md-6">
+                        <div class="card stretch stretch-full">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <a href="javascript:void(0);" class="fw-bold d-block">
+                                        <span class="d-block">Total Paid</span>
+                                        <span class="fs-20 fw-bold d-block">{{sumPricesAllOrders}} $</span>
+                                    </a>
+                                    <div class="badge bg-soft-danger text-danger">
+                                        <i class="feather-arrow-up fs-10 me-1"></i>
+                                        <span>23.45%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-md-6">
+                        <div class="card stretch stretch-full">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <a href="javascript:void(0);" class="fw-bold d-block">
+                                        <span class="d-block">Total Paid this Mounth</span>
+                                        <span class="fs-20 fw-bold d-block">{{sumPricesCurrentMonth}} $</span>
+                                    </a>
+                                    <div class="badge bg-soft-success text-success">
+                                        <i class="feather-arrow-up fs-10 me-1"></i>
+                                        <span>25.44%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 
+                </div>
+            </div>
+        </div>
+        <!-- [ page-header ] end -->
+        <!-- [ Main Content ] start -->
+        <div class="main-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card stretch stretch-full">
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <div id="leadList_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer"><div class="row"><div class="col-sm-6">
+                                    <div id="leadList_filter" class="dataTables_filter">
+                                        <label>Search by Product Name or Date <input type="search" [(ngModel)]="searchTerm" placeholder="Search..."class="form-control form-control-sm" placeholder="" aria-controls="leadList"></label>
+                                    </div>
+                                </div></div><div class="row dt-row"><div class="col-sm-12"><table class="table table-hover dataTable no-footer" id="leadList" aria-describedby="leadList_info">
+                                    <thead>
+                                        <tr><th class="wd-30 sorting sorting_asc" tabindex="0" aria-controls="paymentList" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+                                                
+                                                    
+                                                        
+                                                        
+                                                    
+                                                
+                                            : activate to sort column descending" style="width: 30px;">
+                                                <div class="btn-group mb-1">
+                                                    <div class="custom-control custom-checkbox ms-1">
+                                                        <input type="checkbox" class="custom-control-input" id="checkAllPayment">
+                                                        <label class="custom-control-label" for="checkAllPayment"></label>
+                                                    </div>
+                                                </div>
+                                                <th class="sorting" tabindex="0" aria-controls="paymentList" rowspan="1" colspan="1" aria-label="Transaction: activate to sort column ascending" >Transaction</th>
+                                                <th class="sorting" tabindex="0" aria-controls="paymentList" rowspan="1" colspan="1" aria-label="Client: activate to sort column ascending" >Client</th>
+                                                <th class="sorting" tabindex="0" aria-controls="paymentList" rowspan="1" colspan="1" aria-label="Client: activate to sort column ascending">Phone Number</th>
+                                                <th class="sorting" tabindex="0" aria-controls="paymentList" rowspan="1" colspan="1" aria-label="Amount: activate to sort column ascending" >product Name</th>
+
+                                            <th class="sorting" tabindex="0" aria-controls="paymentList" rowspan="1" colspan="1" aria-label="Amount: activate to sort column ascending" >Amount</th>
+                                            <th class="sorting" tabindex="0" aria-controls="paymentList" rowspan="1" colspan="1" aria-label="Amount: activate to sort column ascending" style="width: 92.85px;">Credit Card</th>
+
+                                            <th class="sorting" tabindex="0" aria-controls="paymentList" rowspan="1" colspan="1" aria-label="Date: activate to sort column ascending" style="width: 153.637px;">Date</th>
+                                            <th class="sorting" tabindex="0" aria-controls="paymentList" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 64.5125px;">Status</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let product of paginatedOrders | ordersfilter: searchTerm" style="font-weight: bolder; font-family: 'Times New Roman', Times, serif; font-size: 140%;">
+                                          <td>
+                                            <h5 class="d-block mb-1">{{ product.orderId }}</h5>
+                                          </td>
+                                          <td><a class="fw-bold"> #{{ product.paymentRef }}</a></td>
+                                          <td>
+                                          <div>
+                                            <span class="text-truncate-1-line">{{ product.userFirstName }} {{ product.userLastName }}</span>
+                                            <small class="fs-12 fw-normal text-muted">{{ product.userEmail }}</small>
+                                        </div></td>
+                                         
+                                          
+                                        
+                                          <td class="text-dark fw-bold">{{ product.phoneNumber }}</td>
+                                          <td>
+                               
+                                            <a href="javascript:void(0);" class="d-block mb-1">{{ product.productName }}</a>
+                                          </td>
+                                          <td>
+                                            <a href="javascript:void(0);" class="d-block mb-1">{{ product.price }} $</a>
+                                          </td>
+                                          <td class="text-dark fw-bold">{{ product.card }}                                    
+                                            <small class="fs-12 fw-normal text-muted">{{ product.dateCard }}</small>
+                                          </td>
+
+
+                                          <td>
+                                            <a href="javascript:void(0);" class="d-block mb-1">{{ product.purchaseDate }}</a>
+                                          </td>
+                                          <td>
+                                            <span class="badge bg-soft-success text-success">Payed</span>
+                                        </td>
+                                     
+                                        </tr>
+                                      </tbody>
+                                </table></div></div>
+                                <div class="row"><div class="col-sm-12 col-md-5">
+                                    <ul class="pagination list-unstyled d-flex align-items-center gap-2 mb-0 pagination-common-style">
+                                        <li [class.disabled]="currentPage === 1">
+                                          <a href="javascript:void(0);" (click)="setPage(currentPage - 1)">
+                                            <i class="bi bi-arrow-left"></i>
+                                          </a>
+                                        </li>
+                                        <li *ngFor="let page of [].constructor(totalPages); let i = index">
+                                          <a href="javascript:void(0);" (click)="setPage(i + 1)" [class.active]="currentPage === i + 1">{{ i + 1 }}</a>
+                                        </li>
+                                        <li [class.disabled]="currentPage === totalPages">
+                                          <a href="javascript:void(0);" (click)="setPage(currentPage + 1)">
+                                            <i class="bi bi-arrow-right"></i>
+                                          </a>
+                                        </li>
+                                      </ul>                            </div> </div> </div> </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
+
+</main>
+    
+</body>
+
+
+

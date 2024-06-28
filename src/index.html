@@ -2,12 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ProjetFront</title>
+  <title>Front</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/favicon.svg">
+  <!-- CSS here -->
+  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+  <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css">
+  <link rel="stylesheet" href="assets/css/vendor/spacing.css"> 
+  <link rel="stylesheet" href="assets/css/plugins/odometer-theme-default.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  
+
+  <link rel="shortcut icon" type="image/x-icon" href="assets/ok/images/favicon.ico" />
+  <!--! END: Favicon-->
+  <!--! BEGIN: Bootstrap CSS-->
+  <link rel="stylesheet" type="text/css" href="assets/ok/css/bootstrap.min.css" />
+  <!--! END: Bootstrap CSS-->
+  <!--! BEGIN: Vendors CSS-->
+  <link rel="stylesheet" type="text/css" href="assets/ok/vendors/css/vendors.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/ok/vendors/css/daterangepicker.min.css" />
+  <!--! END: Vendors CSS-->
+  <!--! BEGIN: Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="assets/ok/css/theme.min.css" />
+
+
 </head>
 <body>
   <app-root></app-root>
+  <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+<script src="assets/js/plugins/waypoints.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/plugins/meanmenu.min.js"></script>
+<script src="assets/js/plugins/odometer.min.js"></script>
+<script src="assets/js/plugins/swiper.min.js"></script>
+<script src="assets/js/plugins/wow.js"></script>
+<script src="assets/js/vendor/magnific-popup.min.js"></script>
+<script src="assets/js/vendor/type.js"></script>
+<script src="assets/js/plugins/nice-select.min.js"></script>
+<script src="assets/js/vendor/jquery-ui.min.js"></script>
+<script src="assets/js/vendor/jquery.appear.js"></script>
+<script src="assets/js/plugins/parallax.min.js"></script>
+<script src="assets/js/plugins/parallax-scroll.js"></script>
+<script src="assets/js/plugins/gsap.min.js"></script>
+<script src="assets/js/plugins/ScrollTrigger.min.js"></script>
+<script src="assets/js/plugins/SplitText.js"></script>
+<script src="assets/js/plugins/tween-max.min.js"></script>
+<script src="assets/js/plugins/draggable.min.js"></script>
+<script src="assets/js/plugins/smoothscroll.js"></script>
+<script src="assets/js/vendor/ajax-form.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+  
+  
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuSidebar = document.getElementById("menuSidebar");
+      const body = document.body;
+
+      menuSidebar.addEventListener("click", function(e) {
+        e.preventDefault();
+        body.classList.toggle("sidebar-closed");
+      });
+    });
+  </script>
+
+
+
+<script src="assets/ok/vendors/js/vendors.min.js"></script>
+<!-- vendors.min.js {always must need to be top} -->
+<script src="assets/ok/vendors/js/daterangepicker.min.js"></script>
+<script src="assets/ok/vendors/js/apexcharts.min.js"></script>
+<script src="assets/ok/vendors/js/circle-progress.min.js"></script>
+<!--! END: Vendors JS !-->
+<!--! BEGIN: Apps Init  !-->
+<script src="assets/ok/js/common-init.min.js"></script>
+<script src="assets/ok/js/dashboard-init.min.js"></script>
+<!--! END: Apps Init !-->
+<!--! BEGIN: Theme Customizer  !-->
+<script src="assets/ok/js/theme-customizer-init.min.js"></script>
+
 </body>
 </html>

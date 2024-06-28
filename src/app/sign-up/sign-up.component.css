@@ -1,0 +1,32 @@
+#meme-form {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+
+  
+   
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+#meme-form label {
+    color: #00008b; /* Dark blue labels */
+}
+#meme-form input, .meme-form select {
+    font-size: 14px; 
+    border-radius: 5px;
+    border: 1px solid #000; 
+    width: 100%; 
+    margin-bottom: 10px; 
+}
+#meme-form button {
+    background: #ff69b4; /* Hot pink button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#meme-form button:hover {
+    background: #ff1493; /* Deep pink on hover */
+}
+#text-danger {
+    font-size: 12px; /* Smaller error message size */
+}

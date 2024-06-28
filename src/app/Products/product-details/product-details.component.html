@@ -1,0 +1,300 @@
+<body class="pace-done " data-select2-id="select2-data-74-krc1"><div class="pace pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+    <div class="pace-progress-inner"></div>
+  </div>
+  <div class="pace-activity"></div></div>
+<app-dash-header></app-dash-header>
+<main class="nxl-container">
+    <div class="nxl-content">
+        <!-- [ page-header ] start -->
+        <div class="page-header">
+            <div class="page-header-left d-flex align-items-center">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">Products</h5>
+                </div>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a routerLink="/ALLProducts" >Products</a></li>
+                    <li class="breadcrumb-item">View</li>
+                </ul>
+            </div>
+            <div class="page-header-right ms-auto">
+                <div class="page-header-right-items">
+                    <div class="d-flex d-md-none">
+                        <a href="javascript:void(0)" class="page-header-right-close-toggle">
+                            <i class="feather-arrow-left me-2"></i>
+                            <span>Back</span>
+                        </a>
+                    </div>
+                
+                </div>
+                <div class="d-md-none d-flex align-items-center">
+                    <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                        <i class="feather-align-right fs-20"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- [ page-header ] end -->
+        <div class="bg-white py-3 border-bottom rounded-0 p-md-0 mb-0">
+            <div class="d-md-none d-flex align-items-center justify-content-between">
+                <a href="javascript:void(0)" class="page-content-left-open-toggle">
+                    <i class="feather-align-left fs-20"></i>
+                </a>
+            </div>
+          
+        </div>
+        <!-- [ Main Content ] start -->
+        <div class="main-content">
+            <div class="tab-content">
+                <div class="tab-pane fade active show" id="overviewTab">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card stretch stretch-full">
+                                <div class="card-body task-header d-md-flex align-items-center justify-content-between">
+                                    <div class="me-4">
+                                        <h4 class="mb-4 fw-bold d-flex">
+                                            <span class="text-truncate-1-line">Product || {{productdetail.productName}}
+                                                 <span *ngIf="productdetail.status === 'activate'" class="badge bg-soft-primary text-primary mx-3">In Prograss</span>
+                                                 <span *ngIf="productdetail.status === 'desactivate'" class="badge bg-soft-primary text-primary mx-3"> Outstanding</span>
+
+                                                </span>
+                                        </h4>
+                                      
+                                    </div>
+                                    <div class="mt-4 mt-md-0">
+                                        <div class="d-flex gap-2">
+                                            <a href="javascript:void(0);" class="btn btn-icon" data-bs-toggle="tooltip" title="" data-bs-original-title="Make as Complete">
+                                                <i class="feather-check-circle"></i>
+                                            </a>
+                                            <a href="javascript:void(0);" class="btn btn-icon" data-bs-toggle="tooltip" title="" data-bs-original-title="Timesheets">
+                                                <i class="feather-calendar"></i>
+                                            </a>
+                                            <a href="javascript:void(0);" class="btn btn-icon" data-bs-toggle="tooltip" title="" data-bs-original-title="Statistics">
+                                                <i class="feather-bar-chart-2"></i>
+                                            </a>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-8">
+                            <div class="card stretch stretch-full">
+                                <div class="card-header">
+                                    <div class="w-100">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <a href="javascript:void(0);" class="fs-12 fw-medium text-muted">
+                                                <span class="text-truncate-1-line">Product In Progress <i class="feather-link-2 fs-10 ms-1"></i></span>
+                                            </a>
+                                            <div class="ms-3">
+                                                <span class="fs-12 text-muted text-truncate-1-line">25/25 Tasks Completed <span class="fs-11 text-muted">(100%)</span></span>
+                                            </div>
+                                        </div>
+                                        <div class="progress mt-2 ht-5">
+                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    
+                                    <img style="padding: 2%;" [src]="getBase64ImageSrc(productdetail.content)" class="img-fluid" alt="Product Image">
+                                    <br> <br>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <label class="form-label">Product Name </label>
+                                            <p>{{productdetail.productName}}</p>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label class="form-label"> Type </label>
+                                            <p>{{productdetail.category}}</p>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label class="form-label">Status</label>
+                                            <p>{{productdetail.status}}</p>
+                                        </div>
+                                        
+                                        <div class="col-md-6 mb-4">
+                                            <label class="form-label"> Date Added </label>
+                                            <p>{{productdetail.created_at}}</p>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label class="fw-semibold mt-4" class="form-label">Stock available</label>
+                                            <p>{{productdetail.stock}}</p>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label class="fw-semibold mt-4">Price </label>
+                                            <p>$25.00</p>
+                                        </div>
+                                        
+                                        <div class="col-md-12">
+                                           <p class="fw-semibold mt-4">Description :</p>
+                                            <ul>
+                                               <p class="mb-0">{{productdetail.description}}</p>
+                                            </ul>                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="row">
+                                <div class="col-xxl-6 col-xl-12 col-sm-6">
+                                    <div class="card stretch stretch-full">
+                                        <div class="card-body">
+                                            <div class="avatar-text bg-soft-primary text-primary border-0 mb-3">
+                                                <i class="feather-log-in"></i>
+                                            </div>
+                                            <p><span class="fw-bold text-primary">Number of sales:  {{ countProduct}}</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-6 col-xl-12 col-sm-6">
+                                    <div class="card stretch stretch-full">
+                                        <div class="card-body">
+                                            <div class="avatar-text bg-soft-warning text-warning border-0 mb-3">
+                                                <i class="feather-clipboard"></i>
+                                            </div>
+                                            <p><span class="fw-bold text-warning">Modify Prodcut</span></p>
+                                            <div><span style="text-decoration: underline; color: red;" class="fw-bold text-dark">Click here</span> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-6 col-xl-12 col-sm-6">
+                                    <div class="card stretch stretch-full">
+                                        <div class="card-body">
+                                            <div class="avatar-text bg-soft-success text-success border-0 mb-3">
+                                                <i class="feather-check"></i>
+                                            </div>
+                                            <p><span class="fw-bold text-success"> {{productdetail.status}}</span> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-6 col-xl-12 col-sm-6">
+                                    <div class="card stretch stretch-full">
+                                        <div  *ngIf="productdetail.status === 'activate'" class="card-body" (click)="DesactiveProductById(productdetail.id)">
+                                            <div class="avatar-text bg-soft-danger text-danger border-0 mb-3">
+                                                <i class="feather-x"></i>
+                                            </div>
+                                            <p><span class="fw-bold text-danger">Disable Product</span></p>
+                                            <div><a style="text-decoration: underline; color: red;" class="fw-bold text-dark">Click here</a> </div>
+                                        </div>
+                                        
+                                        <div  *ngIf="productdetail.status === 'desactivate'" class="card-body" (click)="activeProductById(productdetail.id)">
+                                            <div class="avatar-text bg-soft-danger text-danger border-0 mb-3">
+                                                <i class="feather-x"></i>
+                                            </div>
+                                            <p><span class="fw-bold text-danger">Active Product</span></p>
+                                            <div><a style="text-decoration: underline; color: red;" class="fw-bold text-dark">Click here</a> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12 col-md-6">
+                                    <div class="card stretch stretch-full">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="fw-semibold">16 / 25 Open Tasks</div>
+                                                <i class="feather-check-circle text-warning"></i>
+                                            </div>
+                                            <div class="progress mt-2 ht-3">
+                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 78%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-6">
+                                    <div class="card stretch stretch-full">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="fw-semibold">25 / 25 Days Left</div>
+                                                <i class="feather-calendar text-success"></i>
+                                            </div>
+                                            <div class="progress mt-2 ht-3">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="activityTab">
+                    <div class="card stretch stretch-full">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-center" style="height: calc(100vh - 315px)">
+                                <div class="text-center">
+                                    <h2 class="fs-16 fw-semibold">No activity yet!</h2>
+                                    <p class="fs-12 text-muted">There is no activity on this project</p>
+                                    <a href="javascript:void(0);" class="avatar-text bg-soft-primary text-primary mx-auto" data-bs-toggle="tooltip" title="" data-bs-original-title="Create Activity">
+                                        <i class="feather-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="timesheetsTab">
+                    <div class="card stretch stretch-full">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-center" style="height: calc(100vh - 315px)">
+                                <div class="text-center">
+                                    <h2 class="fs-16 fw-semibold">No timesheets yet!</h2>
+                                    <p class="fs-12 text-muted">There is no timesheets on this project</p>
+                                    <a href="javascript:void(0);" class="avatar-text bg-soft-primary text-primary mx-auto" data-bs-toggle="tooltip" title="" data-bs-original-title="Create Timesheets">
+                                        <i class="feather-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="milestonesTab">
+                    <div class="card stretch stretch-full">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-center" style="height: calc(100vh - 315px)">
+                                <div class="text-center">
+                                    <h2 class="fs-16 fw-semibold">No milestones yet!</h2>
+                                    <p class="fs-12 text-muted">There is no milestones on this project</p>
+                                    <a href="javascript:void(0);" class="avatar-text bg-soft-primary text-primary mx-auto" data-bs-toggle="tooltip" title="" data-bs-original-title="Create Milestones">
+                                        <i class="feather-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="discussionsTab">
+                    <div class="card stretch stretch-full">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-center" style="height: calc(100vh - 315px)">
+                                <div class="text-center">
+                                    <h2 class="fs-16 fw-semibold">No discussions yet!</h2>
+                                    <p class="fs-12 text-muted">There is no discussions on this project</p>
+                                    <a href="javascript:void(0);" class="avatar-text bg-soft-primary text-primary mx-auto" data-bs-toggle="tooltip" title="" data-bs-original-title="Create Discussions">
+                                        <i class="feather-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ Main Content ] end -->
+    </div>
+    <!-- [ Footer ] start -->
+    <footer class="footer">
+        <p class="fs-11 text-muted fw-medium text-uppercase mb-0 copyright">
+            <span>Copyright ©</span>
+            <script>
+                document.write(new Date().getFullYear());
+            </script>2024
+        </p>
+        <div class="d-flex align-items-center gap-4">
+            <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Help</a>
+            <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Terms</a>
+            <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Privacy</a>
+        </div>
+    </footer>
+    <!-- [ Footer ] end -->
+</main>

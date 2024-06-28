@@ -1,0 +1,149 @@
+
+        <main class="auth-cover-wrapper">
+            <div class="auth-cover-content-inner">
+                <div class="auth-cover-content-wrapper">
+                    <div class="auth-img">
+                        <img src="assets/ok/images/auth/auth-cover-register-bg.svg" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="auth-cover-sidebar-inner">
+                <div class="auth-cover-card-wrapper">
+                    <div class="auth-cover-card p-sm-12">
+                        
+                        <h2 class="fs-20 fw-bolder mb-4">Register</h2>
+                        <h4 class="fs-13 fw-bold mb-2">Welcome to the hearing aids platform</h4>
+                        <p class="fs-12 fw-medium text-muted">Let's register your personal information to unlock an exclusive, secure shopping experience tailored to your needs.</p>
+                            <form [formGroup]="userForm" id="meme-form" class="w-100 mt-4 pt-2" (ngSubmit)="submitForm()"  >
+                                <div>
+                                    <div formGroupName="user" class="row g-8">
+                                        <div class="col-md-6">
+                                            <label for="userFirstName" class="form-label">First Name</label>
+                                            <input type="text" class="form-control" id="userFirstName" formControlName="userFirstName">
+                                            <div *ngIf="userForm.get('user')?.get('userFirstName')?.errors?.['required'] && (userForm.get('user')?.get('userFirstName')?.dirty || userForm.get('user')?.get('userFirstName')?.touched)" class="text-danger">
+                                                First name is required
+                                            </div>
+                                            <div *ngIf="userForm.get('user')?.get('userFirstName')?.errors?.['pattern'] && (userForm.get('user')?.get('userFirstName')?.dirty || userForm.get('user')?.get('userFirstName')?.touched)" class="text-danger">
+                                                First name must not contain numbers
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="userLastName" class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" id="userLastName" formControlName="userLastName">
+                                            <div *ngIf="userForm.get('user')?.get('userLastName')?.errors?.['required'] && (userForm.get('user')?.get('userLastName')?.dirty || userForm.get('user')?.get('userLastName')?.touched)" class="text-danger">
+                                                Last name is required
+                                            </div>
+                                            <div *ngIf="userForm.get('user')?.get('userLastName')?.errors?.['pattern'] && (userForm.get('user')?.get('userLastName')?.dirty || userForm.get('user')?.get('userLastName')?.touched)" class="text-danger">
+                                                Last name must not contain numbers
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="cin" class="form-label">CIN</label>
+                                            <input type="text" class="form-control" id="cin" formControlName="cin">
+                                            <div *ngIf="userForm.get('user')?.get('cin')?.errors?.['required'] && (userForm.get('user')?.get('cin')?.dirty || userForm.get('user')?.get('cin')?.touched)" class="text-danger">
+                                                CIN is required
+                                            </div>
+                                            <div *ngIf="userForm.get('user')?.get('cin')?.errors?.['pattern'] && (userForm.get('user')?.get('cin')?.dirty || userForm.get('user')?.get('cin')?.touched)" class="text-danger">
+                                                CIN must contain exactly 8 digits
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="dateOfBirth" class="form-label">Date of Birth</label>
+                                            <input type="date" class="form-control" id="dateOfBirth" formControlName="dateOfBirth">
+                                            <div *ngIf="userForm.get('user')?.get('dateOfBirth')?.errors?.['required'] && (userForm.get('user')?.get('dateOfBirth')?.dirty || userForm.get('user')?.get('dateOfBirth')?.touched)" class="text-danger">
+                                                Date of birth is required
+                                            </div>
+                                            <div *ngIf="userForm.get('user')?.get('dateOfBirth')?.errors?.['pattern'] && (userForm.get('user')?.get('dateOfBirth')?.dirty || userForm.get('user')?.get('dateOfBirth')?.touched)" class="text-danger">
+                                                Date of birth must contain only letters and spaces
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                                            <input type="tel" class="form-control" id="phoneNumber" formControlName="phoneNumber">
+                                            <div *ngIf="userForm.get('user')?.get('phoneNumber')?.errors?.['required'] && (userForm.get('user')?.get('phoneNumber')?.dirty || userForm.get('user')?.get('phoneNumber')?.touched)" class="text-danger">
+                                                Phone number is required
+                                            </div>
+                                            <div *ngIf="userForm.get('user')?.get('phoneNumber')?.errors?.['pattern'] && (userForm.get('user')?.get('phoneNumber')?.dirty || userForm.get('user')?.get('phoneNumber')?.touched)" class="text-danger">
+                                                Phone number must contain at least 8 digits
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="country" class="form-label">Country</label>
+                                            <select style=" font-size: 14px; 
+                                            border-radius: 5px;
+                                            border: 1px solid #000; 
+                                            width: 100%; 
+                                            margin-bottom: 10px; " class="form-control"id="pays" formControlName="pays" (change)="onCountryChange($event)">
+                                                <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+                                            </select>
+                                            <div *ngIf="userForm.get('user.country')?.errors?.['required'] && (userForm.get('user.country')?.dirty || userForm.get('user.country')?.touched)" class="text-danger">
+                                                Country is required
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="state" class="form-label">State</label>
+                                            <select style=" font-size: 14px;     border-radius: 5px;    border: 1px solid #000; width: 100%; margin-bottom: 10px; " class="form-control" id="state" formControlName="state">
+                                                <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+                                            </select>
+                                            <div *ngIf="userForm.get('user.state')?.errors?.['required'] && (userForm.get('user.state')?.dirty || userForm.get('user.state')?.touched)" class="text-danger">
+                                                State is required
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="address" class="form-label">Address</label>
+                                            <input type="text" class="form-control" id="address" formControlName="address">
+                                            <div *ngIf="userForm.get('user')?.get('address')?.errors?.['required'] && (userForm.get('user')?.get('address')?.dirty || userForm.get('user')?.get('address')?.touched)" class="text-danger">
+                                                Address is required
+                                            </div>
+                                            <div *ngIf="userForm.get('user')?.get('address')?.errors?.['pattern'] && (userForm.get('user')?.get('address')?.dirty || userForm.get('user')?.get('address')?.touched)" class="text-danger">
+                                                Address must contain only letters and spaces
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="codePostal" class="form-label">ZIP Code</label>
+                                            <input type="text" class="form-control" id="codePostal" formControlName="codePostal">
+                                            <div *ngIf="userForm.get('user')?.get('codePostal')?.errors?.['required'] && (userForm.get('user')?.get('codePostal')?.dirty || userForm.get('user')?.get('codePostal')?.touched)" class="text-danger">
+                                                Postal code is required
+                                            </div>
+                                            <div *ngIf="userForm.get('user')?.get('codePostal')?.errors?.['pattern'] && (userForm.get('user')?.get('codePostal')?.dirty || userForm.get('user')?.get('codePostal')?.touched)" class="text-danger">
+                                                Postal code must contain only letters and spaces
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email" formControlName="email">
+                                            <div *ngIf="userForm.get('user')?.get('email')?.errors?.['required'] && (userForm.get('user')?.get('email')?.dirty || userForm.get('user')?.get('email')?.touched)" class="text-danger">
+                                                Email is required
+                                            </div>
+                                            <div *ngIf="userForm.get('user')?.get('email')?.errors?.['email'] && (userForm.get('user')?.get('email')?.dirty || userForm.get('user')?.get('email')?.touched)" class="text-danger">
+                                                Please enter a valid email address
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="userPassword" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="userPassword" formControlName="userPassword">
+                                            <div *ngIf="userForm.get('user')?.get('userPassword')?.errors?.['required'] && (userForm.get('user')?.get('userPassword')?.dirty || userForm.get('user')?.get('userPassword')?.touched)" class="text-danger">
+                                                Password is required
+                                            </div>
+                                            <div *ngIf="userForm.get('user')?.get('userPassword')?.errors?.['minlength'] && (userForm.get('user')?.get('userPassword')?.dirty || userForm.get('user')?.get('userPassword')?.touched)" class="text-danger">
+                                                Password must be at least 8 characters long
+                                            </div>
+                                            
+                                        </div>
+                                    
+                                    </div>
+                                </div>                        
+
+                                <button type="submit" class="btn btn-primary float-end">Register</button>
+                                <div  class="mt-5 text-muted">
+                                    <span style="font-size: x-small;
+                                    font-style: oblique;">Already have an account?   </span>
+                                    <a  style="font-size: x-small;
+                                    font-style: oblique;" routerLink="/login" class="fw-bold">        Login</a>
+                                </div>
+                          </form>
+             <br>
+                    </div>
+                </div>
+            </div>
+        </main>

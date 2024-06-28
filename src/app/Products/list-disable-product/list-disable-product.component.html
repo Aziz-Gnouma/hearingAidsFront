@@ -1,0 +1,255 @@
+<body class="pace-done " data-select2-id="select2-data-74-krc1"><div class="pace pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+    <div class="pace-progress-inner"></div>
+  </div>
+  <div class="pace-activity"></div></div>
+<app-dash-header></app-dash-header>
+
+
+
+
+<main class="nxl-container">
+    <div class="nxl-content">
+       
+        <div class="col-lg-12">
+            <div class="card stretch stretch-full">
+                <div class="card-header">
+                  <div id="leadList_filter" class="dataTables_filter">
+<br>
+                    <label>Search by Name : <input type="search" [(ngModel)]="searchTerm" placeholder="Search..."class="form-control form-control-sm" placeholder="" aria-controls="leadList"></label>
+                </div>                   <div class="card-header-action">
+                   
+                    <div class="card-header-btn">
+                      <div data-bs-toggle="tooltip" title="Refresh">
+                        <a href="javascript:void(0);" class="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"></a>
+                      </div>
+                      <div data-bs-toggle="tooltip" title="Maximize/Minimize">
+                        <a href="javascript:void(0);" class="avatar-text avatar-xs bg-success" data-bs-toggle="expand"></a>
+                      </div>
+                    </div>
+                    <div class="dropdown">
+                      <a href="javascript:void(0);" class="avatar-text avatar-sm" data-bs-toggle="dropdown" data-bs-offset="25, 25">
+                        <div data-bs-toggle="tooltip" title="Options">
+                          <i class="feather-more-vertical"></i>
+                        </div>
+                      </a><br><br>
+                    
+                    </div>
+                  </div>
+                </div> 
+                <div class="card-body custom-card-action p-0">
+                  <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                      <thead>
+                        <tr>
+                          <th>Order Id</th>
+                          <th>Product Name</th>
+                          <th>Product Image</th>
+                          <th>Category</th>
+                          <th>Date</th>
+                          <th>Description</th>
+                          <th>Price</th>
+                          <th>Stock</th>
+                          <th>Status</th>
+                          <th class="text-end">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let product of paginatedProducts | Productsfilter: searchTerm" style="font-weight: bolder; font-family: 'Times New Roman', Times, serif; font-size: 140%;">
+                          <td>
+                            <h5 class="d-block mb-1">{{ product.id }}</h5>
+                          </td>
+                          <td class="text-dark fw-bold">{{ product.productName }}</td>
+                          <td>
+                            <div class="hstack gap-3">
+                              <div class="avatar-image avatar-lg rounded">
+                                <img class="img-fluid" (click)="openModal(product, modalContent)" [src]="getBase64ImageSrc(product.content)" alt="{{ product.description }}">
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <a href="javascript:void(0);" class="d-block mb-1">{{ product.category }}</a>
+                          </td>
+                          <td>
+                            <a href="javascript:void(0);" class="d-block mb-1">{{ product.created_at }}</a>
+                          </td>
+                          <td>
+                            <textarea class="form-control description-textarea" readonly>{{ product.description }}</textarea>
+                          </td>
+                          <td class="text-dark fw-bold">$ {{ product.price }}</td>
+                          <td class="text-dark fw-bold">{{ product.stock }}</td>
+                          <td>
+                            <span class="badge bg-soft-success text-danger">{{ product.status }}</span>
+                          </td>
+                          <td class="text-end">
+                            <div class="hstack gap-2 justify-content-end">
+                              <a (click)="Productdetails(product.id)" href="javascript:void(0);" class="avatar-text avatar-md">
+                                <i class="feather-eye"></i>
+                              </a>
+                             
+                              <a (click)="SuprimerProduct(product.id)" href="javascript:void(0);" class="avatar-text avatar-md">
+                                <i class="feather-trash-2"></i>
+                              </a>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <ul class="pagination list-unstyled d-flex align-items-center gap-2 mb-0 pagination-common-style">
+                    <li [class.disabled]="currentPage === 1">
+                      <a href="javascript:void(0);" (click)="setPage(currentPage - 1)">
+                        <i class="bi bi-arrow-left"></i>
+                      </a>
+                    </li>
+                    <li *ngFor="let page of [].constructor(totalPages); let i = index">
+                      <a href="javascript:void(0);" (click)="setPage(i + 1)" [class.active]="currentPage === i + 1">{{ i + 1 }}</a>
+                    </li>
+                    <li [class.disabled]="currentPage === totalPages">
+                      <a href="javascript:void(0);" (click)="setPage(currentPage + 1)">
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+        </div>
+    </div>
+    
+</main>
+    
+</body>
+
+<ng-template #modalContent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">{{selectedProduct.productName}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <!-- Display only the product image here -->
+      <img [src]="getBase64ImageSrc(selectedProduct.content)" class="img-fluid" alt="Product Image">
+    </div>
+
+  </ng-template>
+
+  <ng-template #modalContent1 let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title"> <h1>Add New Product </h1>
+      </h4>
+      <button style="font-size: 220%;" type="button" class="close" aria-label="Close" (click)="closeModal1()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+                        <form *ngIf="ProductForm" [formGroup]="ProductForm" (ngSubmit)="submitForm()">
+                            <div class="row g-3">
+                              
+
+                                <div class="row mb-4 align-items-center">
+                                    <div class="col-lg-4">
+                                        <label for="fullnameInput" class="fw-semibold">Name Product: </label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" style="font-size: 150%;" id="productName" formControlName="productName">
+                                        </div>
+                                    </div>
+                                    <div *ngIf="ProductForm.get('productName')?.invalid && (ProductForm.get('productName')?.dirty || ProductForm.get('productName')?.touched)" class="text-danger">
+                                        product Name est requis
+                                    </div>
+                                </div>
+                                <div class="row mb-4 align-items-center">
+                                    <div class="col-lg-4">
+                                        <label for="fullnameInput" class="fw-semibold">Stock: </label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" style="font-size: 150%;" id="stock" formControlName="stock" min="1">
+                                        </div>
+                                       
+                                    </div>
+                                    <div *ngIf="ProductForm.get('stock')?.invalid && (ProductForm.get('stock')?.dirty || ProductForm.get('stock')?.touched)" class="text-danger">
+                                        stock est requise
+                                    </div>
+                                </div>
+                                <div class="row mb-4 align-items-center">
+                                    <div class="col-lg-4">
+                                        <label for="fullnameInput" class="fw-semibold">Price : </label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" style="font-size: 150%;" id="price" formControlName="price">
+                                        </div>
+                                       
+                                    </div>
+                                    <div *ngIf="ProductForm.get('price')?.invalid && (ProductForm.get('price')?.dirty || ProductForm.get('price')?.touched)" class="text-danger">
+                                        price est requis
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4 align-items-center">
+                                    <div class="col-lg-4">
+                                        <label for="fullnameInput" class="fw-semibold">Category : </label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="input-group">
+                                            <select class="form-control" id="category"  style="font-size: 150%;"formControlName="category">
+                                                <option value="">Choisir une category</option>
+                                                <option value="Français">Men</option>
+                                                <option value="Anglais">Women</option>
+                                                <option value="Autre">Autre</option>
+                                            </select>
+                                        </div>
+                                       
+                                    </div>
+                                    <div *ngIf="ProductForm.get('category')?.invalid && (ProductForm.get('category')?.dirty || ProductForm.get('category')?.touched)" class="text-danger">
+                                        category est requise
+                                    </div>
+                                </div>
+                                
+                             
+                             <div class="row mb-4 align-items-center">
+                                    <div class="col-lg-4">
+                                        <label for="fullnameInput" class="fw-semibold">Product Image : </label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="input-group">
+                                            <input type="file" id="file" style="font-size: 100%;" formControlName="file" (change)="onFileChange($event)">
+                                        </div>
+                                       
+                                    </div>
+                                    <div *ngIf="ProductForm.get('file')?.invalid && (ProductForm.get('file')?.dirty || ProductForm.get('file')?.touched)" class="text-danger">
+                                        file est requis
+                                    </div>
+                                </div>
+
+                              
+                          
+                                <div class="row mb-4 align-items-center">
+                                    <div class="col-lg-4">
+                                        <label for="fullnameInput" class="fw-semibold">description : </label>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="input-group">
+                                            <textarea style="  width: 100%;
+  height: 100px; font-size: 150%;" type="text" class="form-control" id="description" formControlName="description"></textarea>
+                                        </div>
+                                       
+                                    </div>
+                                    <div *ngIf="ProductForm.get('description')?.invalid && (ProductForm.get('description')?.dirty || ProductForm.get('description')?.touched)" class="text-danger">
+                                        Description est requise
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary mt-3">Save</button>
+        
+                            </div>
+        
+                        </form>
+                    </div>
+              
+  </ng-template>
+  
