@@ -15,6 +15,8 @@ import { ArchivedUserComponent } from './archived-user/archived-user.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ListProductClientComponent } from './ClientSpace/list-product-client/list-product-client.component';
 import { BuyingProductComponent } from './ClientSpace/buying-product/buying-product.component';
+import { CartComponent } from './ClientSpace/cart/cart.component';
+import { CheckoutComponent } from './ClientSpace/checkout/checkout.component';
 
 const routes: Routes = [
   { path: '', component: AcceuilComponent },
@@ -33,6 +35,9 @@ const routes: Routes = [
   { path: 'AddProduct', component: AddProductComponent },
   { path: 'DetailsEmplyee/:id', component: ProductDetailsComponent },
   { path: 'AllOrdrs', component: AllOrdersComponent },
+
+  { path: 'cart', component: CartComponent },
+  { path: 'checkout', component: CheckoutComponent },
 
 
 

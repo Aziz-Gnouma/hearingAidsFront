@@ -5,6 +5,7 @@ import { RouterStateSnapshot, Router, ActivatedRoute } from '@angular/router';
 
 import { AppServiceService } from '../../app-service.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CartService } from '../../cart.service';
 
 @Component({
   selector: 'app-buying-product',
@@ -19,15 +20,17 @@ export class BuyingProductComponent {
   modalRef: any;
   ProductForm!: FormGroup;
   id: any;
+  quantity: number = 1;
+Math: any;
 
   constructor(private formBuilder: FormBuilder ,
     private appService: AppServiceService,
+    private cartService: CartService,
     private modalService: NgbModal,
      private router: Router,
      private route: ActivatedRoute,
      private fb: FormBuilder,
 ) { }
-
 
 ngOnInit(): void {
 
@@ -36,8 +39,10 @@ ngOnInit(): void {
   console.log('id employee data:', this.id);
   
   this.getproductById(this.id);
-
-
+}
+addToCart() {
+  this.cartService.addToCart(this.productdetail, this.quantity);
+  console.log('Added to cart:', this.productdetail, this.quantity);
 }
 
 getBase64ImageSrc(base64Content: string) {
@@ -49,8 +54,6 @@ getproductById(id : number): void {
     
   });
 }
-
-
 activeProductById(id: number) {
   const confirmed = confirm('are you sure you want to active this product ?');
   if (confirmed) {
@@ -66,6 +69,4 @@ activeProductById(id: number) {
     this.router.navigate(['/ALLDisableProducts']); 
   }
 }
-
-
 }

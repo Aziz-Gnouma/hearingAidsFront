@@ -5,80 +5,67 @@
     <section class="doctor-details section-space">
         <div class="container">
             <div class="row">
-                
-                <div class="col-lg-6">
-                    
-                    <div class="doctor-details__media mb-40">
-               <div id="product-images-carousel" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner" >
-                                <div class="carousel-item active" >
-                                    <img [src]="getBase64ImageSrc(productdetail.content)" class="d-block w-100" alt="Product Image 1">
-                                </div>
-                                <div class="carousel-item">
-                                    <img [src]="getBase64ImageSrc(productdetail.content)" class="d-block w-100" alt="Product Image 2">
-                                </div>
-                                <!-- Add more carousel items as needed for additional images -->
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#product-images-carousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#product-images-carousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button> 
-
-                        </div>
-    
-                   
+              <div class="col-lg-6">
+                <div class="doctor-details__media mb-40">
+                  <div id="product-images-carousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img [src]="getBase64ImageSrc(productdetail.content)" class="d-block w-100" alt="Product Image 1">
+                      </div>
+                      <div class="carousel-item">
+                        <img [src]="getBase64ImageSrc(productdetail.content)" class="d-block w-100" alt="Product Image 2">
+                      </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#product-images-carousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#product-images-carousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="doctor-details__content mt-md-50 mt-sm-40 mt-xs-40">
-                        <div class="doctor-details__content-future mb-30">
-                            <ul class="doctor-details__content-future__list">
-
-                                <ul class="doctor-details__content-future__list">
-                                    <li style=" font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><span> {{productdetail.productName}}  </span></li>
-                                    <div class="rating-wrap">
-                                        <ul class="rating">
-                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                            <li><i class="fa-sharp fa-solid fa-star"></i></li>
-                                        </ul>
-                                        <li style="font-style: oblique; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                                         font-size: 150%;"><span style=" color: #185ec8;     border: #185ec8;"> {{productdetail.price}} $ </span></li>
-
-                                    </div>
-                                </ul>                    
-                                        <p class="mb-20">{{productdetail.description}}</p>
-                            
-                                <li style="font-style: oblique; font-size: 150%; color: black;">Category : {{productdetail.category}}</li>
-                                
-                               
-                                <li style="font-style: oblique; font-size: 150%; color: black;">Quantity : 
-                                    
-                                </li>
-                                <li class="input-group quantity-selector">
-                                    <button type="button" class="btn minus-btn" id="btn-minus">-</button>
-                                    <input type="number" class="form-control quantity-input" id="quantity" name="quantity" value="1" min="1">
-                                    <button type="button" class="btn  plus-btn" id="btn-minus">+</button>
-                                </li>
-                            </ul>
-                        </div>
-    
-                        <button  type="submit" class="rr-btn rr-btn__primary-color">
-                            <span class="btn-wrap">
-                                <span class="text-one">Add to cart</span>
-                                <span class="text-two">Add to cart</span>
-                            </span>
-                        </button>
-                    </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="doctor-details__content mt-md-50 mt-sm-40 mt-xs-40">
+                  <div class="doctor-details__content-future mb-30">
+                    <ul class="doctor-details__content-future__list">
+                      <li style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><span>{{productdetail.productName}}</span></li>
+                      <div class="rating-wrap">
+                        <ul class="rating">
+                          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                          <li><i class="fa-sharp fa-solid fa-star"></i></li>
+                        </ul>
+                        <li style="font-style: oblique; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 150%;"><span style="color: #185ec8; border: #185ec8;">{{productdetail.price}} $</span></li>
+                      </div>
+                      <p class="mb-20">{{productdetail.description}}</p>
+                      <li style="font-style: oblique; font-size: 150%; color: black;">Category: {{productdetail.category}}</li>
+                      <li style="font-style: oblique; font-size: 150%; color: black;">Quantity:</li>
+                      <li class="input-group quantity-selector">
+                        <button type="button" class="btn minus-btn" (click)="quantity = Math.max(1, quantity - 1)">-</button>
+                        <input type="number" class="form-control quantity-input" [(ngModel)]="quantity" name="quantity" min="1">
+                        <button type="button" class="btn plus-btn" (click)="quantity = quantity + 1">+</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <button _ngcontent-ng-c363587810=""    type="submit" class="rr-btn rr-btn__primary-color successAlertMessage" (click)="addToCart()">
+                    <span class="btn-wrap">
+                      <span class="text-one">Add to cart</span>
+                      <span class="text-two">Add to cart</span>
+                    </span>
+                  </button>
                 </div>
-            </div>
-        </div>
+              </div>
+         
+              </div>
+              
+
+</div>
+
     </section>
   
 

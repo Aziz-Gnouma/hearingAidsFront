@@ -1,0 +1,143 @@
+<app-app-hedear></app-app-hedear>
+<main class="home-3__background overflow-hidden">
+<ng-template #emptyCart>
+    <p>Your cart is empty.</p>
+  </ng-template>
+
+  <div class="banner-3__shape"></div>
+
+  <section class="doctor-details section-space">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-lg-8">
+          <div class="doctor-details__media mb-40">
+            <form [formGroup]="userForm" id="meme-form" class="w-100 mt-4 pt-2">
+                <div>
+                    <div formGroupName="user" class="row g-8">
+                        <div class="col-md-6">
+                            <label for="userFirstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="userFirstName" formControlName="userFirstName">
+                            <div *ngIf="userForm.get('user')?.get('userFirstName')?.errors?.['required'] && (userForm.get('user')?.get('userFirstName')?.dirty || userForm.get('user')?.get('userFirstName')?.touched)" class="text-danger">
+                                First name is required
+                            </div>
+                            <div *ngIf="userForm.get('user')?.get('userFirstName')?.errors?.['pattern'] && (userForm.get('user')?.get('userFirstName')?.dirty || userForm.get('user')?.get('userFirstName')?.touched)" class="text-danger">
+                                First name must not contain numbers
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="userLastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="userLastName" formControlName="userLastName">
+                            <div *ngIf="userForm.get('user')?.get('userLastName')?.errors?.['required'] && (userForm.get('user')?.get('userLastName')?.dirty || userForm.get('user')?.get('userLastName')?.touched)" class="text-danger">
+                                Last name is required
+                            </div>
+                            <div *ngIf="userForm.get('user')?.get('userLastName')?.errors?.['pattern'] && (userForm.get('user')?.get('userLastName')?.dirty || userForm.get('user')?.get('userLastName')?.touched)" class="text-danger">
+                                Last name must not contain numbers
+                            </div>
+                        </div>
+           
+                        <div class="col-md-68">
+                            <label for="country" class="form-label">Country</label>
+                            <select style=" font-size: 14px; 
+                            border-radius: 5px;
+                            border: 1px solid #000; 
+                            width: 100%; 
+                            margin-bottom: 10px; " class="form-control"id="pays" formControlName="pays" >
+                                <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+                            </select>
+                            <div *ngIf="userForm.get('user.country')?.errors?.['required'] && (userForm.get('user.country')?.dirty || userForm.get('user.country')?.touched)" class="text-danger">
+                                Country is required
+                            </div>
+                        </div>
+                        <div class="col-md-68">
+                            <label for="state" class="form-label">State</label>
+                            <select style=" font-size: 14px;     border-radius: 5px;    border: 1px solid #000; width: 100%; margin-bottom: 10px; " class="form-control" id="state" formControlName="state">
+                                <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+                            </select>
+                            <div *ngIf="userForm.get('user.state')?.errors?.['required'] && (userForm.get('user.state')?.dirty || userForm.get('user.state')?.touched)" class="text-danger">
+                                State is required
+                            </div>
+                        </div>
+                        <div class="col-md-68">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="address" formControlName="address">
+                            <div *ngIf="userForm.get('user')?.get('address')?.errors?.['required'] && (userForm.get('user')?.get('address')?.dirty || userForm.get('user')?.get('address')?.touched)" class="text-danger">
+                                Address is required
+                            </div>
+                            <div *ngIf="userForm.get('user')?.get('address')?.errors?.['pattern'] && (userForm.get('user')?.get('address')?.dirty || userForm.get('user')?.get('address')?.touched)" class="text-danger">
+                                Address must contain only letters and spaces
+                            </div>
+                        </div>
+                        <div class="col-md-68">
+                            <label for="codePostal" class="form-label">ZIP Code</label>
+                            <input type="text" class="form-control" id="codePostal" formControlName="codePostal">
+                            <div *ngIf="userForm.get('user')?.get('codePostal')?.errors?.['required'] && (userForm.get('user')?.get('codePostal')?.dirty || userForm.get('user')?.get('codePostal')?.touched)" class="text-danger">
+                                Postal code is required
+                            </div>
+                            <div *ngIf="userForm.get('user')?.get('codePostal')?.errors?.['pattern'] && (userForm.get('user')?.get('codePostal')?.dirty || userForm.get('user')?.get('codePostal')?.touched)" class="text-danger">
+                                Postal code must contain only letters and spaces
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phoneNumber" formControlName="phoneNumber">
+                            <div *ngIf="userForm.get('user')?.get('phoneNumber')?.errors?.['required'] && (userForm.get('user')?.get('phoneNumber')?.dirty || userForm.get('user')?.get('phoneNumber')?.touched)" class="text-danger">
+                                Phone number is required
+                            </div>
+                            <div *ngIf="userForm.get('user')?.get('phoneNumber')?.errors?.['pattern'] && (userForm.get('user')?.get('phoneNumber')?.dirty || userForm.get('user')?.get('phoneNumber')?.touched)" class="text-danger">
+                                Phone number must contain at least 8 digits
+                            </div>
+                        </div>
+                           <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" formControlName="email">
+                            <div *ngIf="userForm.get('user')?.get('email')?.errors?.['required'] && (userForm.get('user')?.get('email')?.dirty || userForm.get('user')?.get('email')?.touched)" class="text-danger">
+                                Email is required
+                            </div>
+                            <div *ngIf="userForm.get('user')?.get('email')?.errors?.['email'] && (userForm.get('user')?.get('email')?.dirty || userForm.get('user')?.get('email')?.touched)" class="text-danger">
+                                Please enter a valid email address
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>                        
+
+              
+          </form>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="sidebar sidebar-rr-sticky">
+            <div class="sidebar__widget-service mb-30">
+              <div class="cart-totals">
+                <h2 class="cart-totals__title"  class="total-label">Cart Totals</h2> <br>
+                <table class="cart-totals__table" style="font-size: medium;">
+                    <tr>
+                      <td>SUBTOTAL</td>
+                      <td>{{ calculateSubtotal() | currency: '$':true }}</td>
+                    </tr>
+                    <tr>
+                      <td>SHIPPING</td>
+                      <td>Flat rate: Free <br>Shipping options will be updated during checkout.</td>
+                    </tr>
+                    <tr class="total-row">
+                      <td colspan="4" class="total-label">TOTAL</td>
+                      <td class="total-amount">${{ calculateSubtotal() | number:'1.2-2' }}</td>
+                    </tr>
+                    <tr class="total-row">
+                      <td colspan="2">
+                        <button _ngcontent-ng-c363587810=""   class="calculate-shipping-btn w-100 successAlertMessage" >PLACE ORDER</button>
+                      </td>
+                    </tr>
+             
+                  </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</main>

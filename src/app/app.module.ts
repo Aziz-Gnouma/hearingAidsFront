@@ -25,6 +25,9 @@ import { ListProductClientComponent } from './ClientSpace/list-product-client/li
 import { BuyingProductComponent } from './ClientSpace/buying-product/buying-product.component';
 import { AppHedearComponent } from './app-hedear/app-hedear.component';
 import { ProductsfilterPipe, UserFilterPipe, ordersfilterPipe } from './user-filter.pipe';
+import { CartComponent } from './ClientSpace/cart/cart.component';
+import { CartService } from './cart.service';
+import { CheckoutComponent } from './ClientSpace/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,8 @@ import { ProductsfilterPipe, UserFilterPipe, ordersfilterPipe } from './user-fil
     UserFilterPipe,
     ordersfilterPipe,
     ProductsfilterPipe,
+    CartComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +70,7 @@ import { ProductsfilterPipe, UserFilterPipe, ordersfilterPipe } from './user-fil
       multi: true
     },
     AppServiceService,
+    CartService,
   ],
   bootstrap: [AppComponent]
 })
